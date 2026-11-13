@@ -1,4 +1,4 @@
-// This component shows one dish. The data comes in through props
+//this component shows one dish, the data comes in through props
 function MenuCard(props) {
   const item = props.item
 

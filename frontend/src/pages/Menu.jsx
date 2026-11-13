@@ -5,13 +5,13 @@ import MenuCard from '../components/MenuCard'
 function Menu() {
   const { menu, addToCart } = useContext(AppContext)
 
-  // One state for each filter
+  //one state for each filter
   const [search, setSearch] = useState('')
   const [category, setCategory] = useState('All')
   const [dietary, setDietary] = useState('All')
   const [maxPrice, setMaxPrice] = useState('')
 
-  // Go through the menu and keep only the dishes that match the filters
+  //go through the menu and keep only the dishes that match the filters
   const filteredMenu = []
   for (let i = 0; i < menu.length; i++) {
     const item = menu[i]
@@ -56,7 +56,7 @@ function Menu() {
         <input type="number" placeholder="Max price" value={maxPrice} onChange={(e) => setMaxPrice(e.target.value)} />
       </div>
 
-      {/* If there are no dishes, show a message. If not, show the list */}
+      {/* if there are no dishes, show a message. If not, show the list */}
       {filteredMenu.length === 0 ? (
         <p>No items found.</p>
       ) : (

@@ -6,7 +6,7 @@ function Cart() {
   const [orderType, setOrderType] = useState('pickup')
   const [message, setMessage] = useState('')
 
-  // Called when the user clicks Confirm order
+  //called when the user clicks Confirm order
   function handleConfirm() {
     const order = placeOrder(orderType)
     setMessage('Order #' + order.id + ' confirmed! Type: ' + order.type)

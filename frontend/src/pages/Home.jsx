@@ -6,7 +6,7 @@ import MenuCard from '../components/MenuCard'
 function Home() {
   const { menu } = useContext(AppContext)
 
-  // Take the first 3 dishes as featured
+  //take the first 3 dishes as featured
   const featured = menu.slice(0, 3)
 
   return (

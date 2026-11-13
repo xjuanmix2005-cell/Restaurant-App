@@ -7,7 +7,7 @@ function Admin() {
     orders, updateOrderStatus, reservations, updateReservationStatus,
   } = useContext(AppContext)
 
-  // One state for each field of the dish form
+  //one state for each field of the dish form
   const [name, setName] = useState('')
   const [category, setCategory] = useState('Mains')
   const [description, setDescription] = useState('')
@@ -15,10 +15,10 @@ function Admin() {
   const [price, setPrice] = useState('')
   const [dietary, setDietary] = useState('none')
 
-  // editingId is null when we are adding, or the dish id when we are editing
+  //editingId is null when we are adding, or the dish id when we are editing
   const [editingId, setEditingId] = useState(null)
 
-  // Only admins can see this page
+  //only admins can see this page
   if (role !== 'admin') {
     return (
       <div className="page">
@@ -28,7 +28,7 @@ function Admin() {
     )
   }
 
-  // Empty the form
+  //empty the form
   function clearForm() {
     setName('')
     setCategory('Mains')
@@ -39,11 +39,11 @@ function Admin() {
     setEditingId(null)
   }
 
-  // Add a new dish or save the changes of an existing one
+  //add a new dish or save the changes of an existing one
   function handleSubmit(e) {
     e.preventDefault()
 
-    // Check name and price
+    //check name and price
     if (name === '' || price === '' || Number(price) <= 0) {
       alert('Name and a valid price are required')
       return
@@ -66,7 +66,7 @@ function Admin() {
     clearForm()
   }
 
-  // Put the dish data inside the form so it can be edited
+  //put the dish data inside the form so it can be edited
   function startEdit(item) {
     setEditingId(item.id)
     setName(item.name)

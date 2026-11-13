@@ -7,7 +7,7 @@ function Chat() {
   ])
   const [input, setInput] = useState('')
 
-  // Look for a keyword in the question and return its answer
+  //look for a keyword in the question and return its answer
   function getAnswer(question) {
     const text = question.toLowerCase()
     for (let i = 0; i < chatData.length; i++) {
@@ -18,7 +18,7 @@ function Chat() {
     return "Sorry, I don't know that yet. Try one of the suggested questions."
   }
 
-  // Add the user message and the bot answer to the chat
+  //add the user message and the bot answer to the chat
   function sendMessage(text) {
     if (text === '') {
       return
@@ -29,7 +29,7 @@ function Chat() {
     setInput('')
   }
 
-  // Called when the form is submitted (Send button or Enter key)
+  //called when the form is submitted (Send button or Enter key)
   function handleSubmit(e) {
     e.preventDefault()
     sendMessage(input)

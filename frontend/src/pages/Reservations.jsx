@@ -4,7 +4,7 @@ import { AppContext } from '../context/AppContext'
 function Reservations() {
   const { reservations, addReservation } = useContext(AppContext)
 
-  // One state for each field of the form
+  //one state for each field of the form
   const [name, setName] = useState('')
   const [date, setDate] = useState('')
   const [time, setTime] = useState('')
@@ -13,12 +13,12 @@ function Reservations() {
   const [notes, setNotes] = useState('')
   const [message, setMessage] = useState('')
 
-  // Called when the form is submitted
+  //called when the form is submitted
   function handleSubmit(e) {
     e.preventDefault() // stops the page from reloading
 
-    // Check that the required fields are filled
-    if (name === '' || date === '' || time === '') {
+    //check that the required fields are filled
+    if (name === ' ' || date === ' ' || time === ' ') {
       setMessage('Please fill name, date and time.')
       return
     }
@@ -34,7 +34,7 @@ function Reservations() {
     addReservation(reservation)
     setMessage('Reservation sent! You will get a confirmation soon.')
 
-    // Clear the form
+    //clear the form
     setName('')
     setDate('')
     setTime('')
